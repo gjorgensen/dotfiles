@@ -10,7 +10,7 @@
 
 dir=~/dotfiles # dotfiles directory
 olddir=~/dotfiles/dotfiles_old # old dotfiles backup directory
-files="vimrc powconfig gitconfig rbenv profile" # list of files/folders to symlink in homedir
+files="vimrc vim powconfig gitconfig rbenv profile" # list of files/folders to symlink in homedir
 
 ##########
 

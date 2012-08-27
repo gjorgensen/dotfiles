@@ -12,3 +12,8 @@ Run it as follows
 cd ~/dotfiles
 chmod +x makesymlinks.sh
 ./makesymlinks.sh
+
+
+Then run 
+cd .vim/
+ruby update_bundles.rb
