@@ -9,7 +9,7 @@
 ########## Variables
 
 dir=~/dotfiles # dotfiles directory
-olddir=~/dotfiles/dotfiles_old # old dotfiles backup directory
+olddir=~/dotfiles_old # old dotfiles backup directory
 files="vimrc vim powconfig gitconfig rbenv profile" # list of files/folders to symlink in homedir
 
 ##########
