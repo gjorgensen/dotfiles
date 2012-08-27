@@ -1,4 +1,14 @@
-dotfiles
-========
+Hacked from michaeljsmalley
 
-My dot files
+Put dotfiles in the dotfiles directory.  Don't prefix with "."
+
+Edit the makesymlinks.sh to include all files you want copied and symlinked
+
+On a new machine do a 
+
+
+Run it as follows
+
+cd ~/dotfiles
+chmod +x makesymlinks.sh
+./makesymlinks.sh
