@@ -1,6 +1,6 @@
 Hacked from michaeljsmalley
 
-Put dotfiles in the dotfiles directory.  Don't prefix with "."
+Put dotfiles in the dotfiles directory.  Do prefix with "."
 
 Edit the makesymlinks.sh to include all files you want copied and symlinked
 
