@@ -10,7 +10,7 @@
 
 dir=~/dotfiles # dotfiles directory
 olddir=~/dotfiles_old # old dotfiles backup directory
-files="vimrc vim powconfig gitconfig rbenv profile" # list of files/folders to symlink in homedir
+files="vimrc powconfig gitconfig profile" # list of files/folders to symlink in homedir
 
 ##########
 
@@ -31,3 +31,6 @@ echo "Moving any existing dotfiles from ~ to $olddir"
     echo "Creating symlink to $file in home directory."
     ln -s $dir/.$file ~/.$file
 done
+
+#setup symlink for the helper for vim setup
+ln -s .update_bundles.rb ~/.vim/update_bundles.rb
