@@ -8,9 +8,9 @@ Edit the makesymlinks.sh to include all files you want copied and symlinked
 
 On a new machine do  
 
-'cd ~/dotfiles'
-'chmod +x makesymlinks.sh'
-'./makesymlinks.sh'
+`cd ~/dotfiles`
+`chmod +x makesymlinks.sh`
+`./makesymlinks.sh`
 
 
 Then run 
