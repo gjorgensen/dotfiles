@@ -8,6 +8,7 @@ git_bundles = [
   "https://github.com/tpope/vim-surround.git",
 	"https://github.com/mileszs/ack.vim.git",
 	"https://github.com/tpope/vim-commentary.git",
+	"https://github.com/itspriddle/vim-stripper.git"
 ]
 
 vim_org_scripts = [

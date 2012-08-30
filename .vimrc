@@ -6,12 +6,17 @@ set ruler
 set columns=999 
 set lines=999
 set nowrap
+set cursorline
 :colorscheme vividchalk 
 set noerrorbells
 set laststatus=2
 set backup
 set backupdir=~/.vim/backups
 set directory=~/.vim/tmp
+" use emacs-style tab completion when selecting files, etc
+set wildmode=longest,list
+" make tab completion for files/buffers act like bash
+set wildmenu
 " obvious custom mappings
 command! Rfactories :Redit test/factories/factories.rb
 command! RVfactories :RVedit test/factories/factories.rb
@@ -27,6 +32,15 @@ set incsearch             " But do highlight as you type your search.
 set showmatch
 " make searches case-sensitive only if they contain upper-case characters
 set ignorecase smartcase
+
+
+
+" highlight the trailing whitespace on opening the buffer and leaving the insert mode.
+highlight ExtraWhitespace ctermbg=red guibg=red
+au ColorScheme * highlight ExtraWhitespace guibg=red
+au BufEnter * match ExtraWhitespace /\s\+$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhiteSpace /\s\+$/
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
