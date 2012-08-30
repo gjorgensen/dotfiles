@@ -17,4 +17,5 @@ On a new machine do
 
 Then run 
 `cd .vim/`
+
 `ruby update_bundles.rb`
