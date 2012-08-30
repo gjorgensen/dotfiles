@@ -3,20 +3,16 @@ set bs=2
 set shiftwidth=2
 set number
 set ruler
-set columns=999 
+set columns=999
 set lines=999
 set nowrap
 set cursorline
-:colorscheme vividchalk 
+:colorscheme vividchalk
 set noerrorbells
 set laststatus=2
 set backup
 set backupdir=~/.vim/backups
 set directory=~/.vim/tmp
-" use emacs-style tab completion when selecting files, etc
-set wildmode=longest,list
-" make tab completion for files/buffers act like bash
-set wildmenu
 " obvious custom mappings
 command! Rfactories :Redit test/factories/factories.rb
 command! RVfactories :RVedit test/factories/factories.rb
