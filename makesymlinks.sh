@@ -26,11 +26,14 @@ echo "...done"
 
 # move any existing dotfiles in homedir to dotfiles_old directory, then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
 for file in $files; do
-echo "Moving any existing dotfiles from ~ to $olddir"
-    mv ~/.$file $olddir/
-    echo "Creating symlink to $file in home directory."
-    ln -s $dir/.$file ~/.$file
+  echo "Moving any existing dotfiles from ~ to $olddir"
+  mv ~/.$file $olddir/
+  echo "Creating symlink to $file in home directory."
+  ln -s $dir/.$file ~/.$file
 done
 
 #setup symlink for the helper for vim setup
-ln -s .update_bundles.rb ~/.vim/update_bundles.rb
+echo "Moving update_bundles from ~/.vim/ to $olddir"
+mv ~/.vim/update_bundles.rb $olddir/
+echo "Creating symlink to update_bundles.rb in ~/.vim/"
+ln -s $dir/update_bundles.rb ~/.vim/update_bundles.rb
