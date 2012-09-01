@@ -13,6 +13,9 @@ set laststatus=2
 set backup
 set backupdir=~/.vim/backups
 set directory=~/.vim/tmp
+set showcmd " This shows what you are typing as a command.  I love this!
+set scrolloff=5               " keep at least 5 lines above/below
+set sidescrolloff=5           " keep at least 5 lines left/right
 " obvious custom mappings
 command! Rfactories :Redit test/factories/factories.rb
 command! RVfactories :RVedit test/factories/factories.rb
@@ -26,9 +29,7 @@ command! RTstylesheet :RTedit assets/stylesheets/applicaiton.css
 set nohlsearch            " Don't continue to highlight searched phrases.
 set incsearch             " But do highlight as you type your search.
 set showmatch
-" make searches case-sensitive only if they contain upper-case characters
-set ignorecase smartcase
-
+set ignorecase smartcase  " make searches case-sensitive only if they contain upper-case characters
 
 
 " highlight the trailing whitespace on opening the buffer and leaving the insert mode.
@@ -53,12 +54,9 @@ augroup vimrcEx
 
 "for ruby, autoindent with two spaces, always expand tabs
   autocmd FileType ruby,haml,eruby,yaml,html,javascript,sass,cucumber set ai sw=2 sts=2 et
-  autocmd FileType python set sw=4 sts=4 et
-
   autocmd! BufRead,BufNewFile *.sass setfiletype sass
 
 augroup END
-
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -73,6 +71,10 @@ nnoremap <c-l> <c-w>l
 imap <c-l> <space>=><space>
 " Can't be bothered to understand ESC vs <c-c> in insert mode
 imap <c-c> <esc>
+" resize the vertical split easlier
+nnoremap <silent> <c-p> 20<c-W>>
+nnoremap <silent> <c-o> 20<c-W><
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
@@ -88,7 +90,6 @@ function! InsertTabWrapper()
 endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
-
 
 
 " funkyness below as per tpope post to deal with pathogen load issues
