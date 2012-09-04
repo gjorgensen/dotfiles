@@ -1,3 +1,4 @@
+let mapleader = ","
 set ts=2
 set bs=2
 set shiftwidth=2
@@ -75,6 +76,9 @@ nnoremap <silent> <c-p> 20<c-W>>
 nnoremap <silent> <c-o> 20<c-W><
 
 
+nnoremap <leader>a :Ack -a
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
@@ -103,3 +107,14 @@ imap  <silent> <F5> <Esc> mmgg=G'm
 " preserve highlight in visual mode when indenting
 :vmap < <gv
 :vmap > >gv
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MAPS TO JUMP TO SPECIFIC COMMAND-T TARGETS AND FILES
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
+map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
+map <leader>gc :CommandTFlush<cr>\|:CommandT app/controllers<cr>
+map <leader>gm :CommandTFlush<cr>\|:CommandT app/models<cr>
+map <leader>gh :CommandTFlush<cr>\|:CommandT app/helpers<cr>
+map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
+map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
+map <leader>gs :CommandTFlush<cr>\|:CommandT public/stylesheets<cr>
