@@ -26,8 +26,9 @@ Then run
 
 To get CommandT working:
 
-In ~/.vim/bundle/Command-T
-rbenv local system
+`cd ~/.vim/bundle/Command-T`
+
+`rbenv local system`
 
 
 `cd ~/.vim/bundle/command-t/ruby/command-t`
