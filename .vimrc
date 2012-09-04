@@ -31,7 +31,6 @@ set incsearch             " But do highlight as you type your search.
 set showmatch
 set ignorecase smartcase  " make searches case-sensitive only if they contain upper-case characters
 
-
 " highlight the trailing whitespace on opening the buffer and leaving the insert mode.
 highlight ExtraWhitespace ctermbg=red guibg=red
 au ColorScheme * highlight ExtraWhitespace guibg=red

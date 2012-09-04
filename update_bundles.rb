@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-git_bundles = [ 
+git_bundles = [
   "https://github.com/scrooloose/nerdtree.git",
   "https://github.com/tpope/vim-fugitive.git",
   "https://github.com/tpope/vim-rails.git",
@@ -8,7 +8,8 @@ git_bundles = [
   "https://github.com/tpope/vim-surround.git",
 	"https://github.com/mileszs/ack.vim.git",
 	"https://github.com/tpope/vim-commentary.git",
-	"https://github.com/itspriddle/vim-stripper.git"
+	"https://github.com/itspriddle/vim-stripper.git",
+  "https://github.com/wincent/Command-T.git"
 ]
 
 vim_org_scripts = [
