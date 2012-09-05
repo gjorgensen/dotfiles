@@ -1,6 +1,3 @@
-# servers
-alias vptest='ssh -p 30000 deploy@67.207.149.58'
-
 # Project -- Kite
 alias kite='cd ~/projects/kite'
 alias kiteweb='open -a Firefox http://localhost:3000/tricks'
@@ -15,6 +12,7 @@ alias bizweb='open -a Firefox http://localhost:3000/clients'
 
 # Project -- ED
 alias ed='cd ~/projects/EDHelpDesk'
+alias edweb='open -a Firefox http://localhost:3000/service_orders'
 
 # Project -- dls
 alias dls='cd ~/projects/dls'
@@ -24,11 +22,14 @@ alias dbcon='./script/dbconsole'
 alias con='./script/console'
 alias svr='./script/server'
 
+alias vrc='mvim ~/.vimrc'
+alias pro='mvim ~/.profile'
+alias dot='cd ~/dotfiles'
 alias db='mysql -u root'
+alias la='ls -al'
+alias root='cd ~/'
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/gregoryjorgensen/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails_generator:$PATH" 
-alias gitx='open -a Gitx .'
-
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/gregoryjorgensen/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails_generator:$PATH"
 
 alias rr='rake test:recent'
 
@@ -48,7 +49,7 @@ c_cyan=`tput setaf 6`
 c_red=`tput setaf 1`
 c_green=`tput setaf 2`
 c_sgr0=`tput sgr0`
- 
+
 parse_git_branch ()
 {
   if git rev-parse --git-dir >/dev/null 2>&1
@@ -65,7 +66,7 @@ branch_color ()
         if git rev-parse --git-dir >/dev/null 2>&1
         then
                 color=""
-                if git diff --quiet 2>/dev/null >&2 
+                if git diff --quiet 2>/dev/null >&2
                 then
                         color="${c_green}"
                 else
