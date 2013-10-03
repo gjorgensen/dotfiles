@@ -1,6 +1,22 @@
-# Project -- Kite
-alias kite='cd ~/projects/kite'
-alias kiteweb='open -a Firefox http://localhost:3000/tricks'
+#   . ~/.profile
+# after you mod this file run this to refresh your current session
+
+alias vd='mvim .'
+alias vrc='mvim ~/.vimrc'
+alias pro='mvim ~/.profile'
+alias dot='cd ~/dotfiles'
+alias la='ls -al'
+alias root='cd ~/'
+alias rdm='bundle exec rake db:migrate'
+alias rc='bundle exec rails console'
+alias rgm='bundle exec rails g migration'
+alias hrrc='rbenv exec heroku run rails c'
+alias hrrdm='rbenv exec heroku run rake db:migrate'
+alias gphm='git push heroku master'
+alias gcam='git commit -a -m'
+alias hdpull='rbenv exec heroku db:pull'
+alias hdpush='rbenv exec heroku db:push'
+
 
 # Project -- VoIP
 alias voip='cd ~/projects/voip_tracker'
@@ -14,20 +30,13 @@ alias bizweb='open -a Firefox http://localhost:3000/clients'
 alias ed='cd ~/projects/EDHelpDesk'
 alias edweb='open -a Firefox http://localhost:3000/service_orders'
 
-# Project -- dls
-alias dls='cd ~/projects/dls'
-alias dlsweb='open -a Firefox http://localhost:3000/tricks'
+# Project -- DCCS
+alias dccs='cd ~/projects/DCCS'
 
-alias dbcon='./script/dbconsole'
-alias con='./script/console'
-alias svr='./script/server'
-
-alias vrc='mvim ~/.vimrc'
-alias pro='mvim ~/.profile'
-alias dot='cd ~/dotfiles'
-alias db='mysql -u root'
-alias la='ls -al'
-alias root='cd ~/'
+# think git diff remote (do a fetch first)
+alias gdg='git diff --color remotes/origin/master..master'
+alias gdh='git diff --color remotes/heroku/master..master'
+alias gdc='git diff --color'
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/gregoryjorgensen/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails_generator:$PATH"
 
@@ -83,3 +92,6 @@ eval "$(rbenv init -)"
 PS1='[\[$(branch_color)\]$(parse_git_branch)\[${c_sgr0}\]] \u@\[${c_cyan0}\]\w\[${c_sgr0}\]: '
 
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

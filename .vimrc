@@ -14,7 +14,6 @@ set laststatus=2
 set backup
 set backupdir=~/.vim/backups
 set directory=~/.vim/tmp
-set showcmd " This shows what you are typing as a command.  I love this!
 set scrolloff=5               " keep at least 5 lines above/below
 set sidescrolloff=5           " keep at least 5 lines left/right
 " obvious custom mappings
@@ -27,18 +26,24 @@ command! RTschema :RTedit db/schema.rb
 command! Rstylesheet :Redit assets/stylesheets/applicaiton.css
 command! RVstylesheet :RVedit assets/stylesheets/applicaiton.css
 command! RTstylesheet :RTedit assets/stylesheets/applicaiton.css
-set nohlsearch            " Don't continue to highlight searched phrases.
-set incsearch             " But do highlight as you type your search.
-set showmatch
+set hlsearch            " Continue to highlight searched phrases.
+set incsearch             " Highlight as you type your search.
 set ignorecase smartcase  " make searches case-sensitive only if they contain upper-case characters
 
-" highlight the trailing whitespace on opening the buffer and leaving the insert mode.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Highlight the trailing whitespace on opening the buffer and leaving the insert mode.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 highlight ExtraWhitespace ctermbg=red guibg=red
 au ColorScheme * highlight ExtraWhitespace guibg=red
 au BufEnter * match ExtraWhitespace /\s\+$/
 au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 au InsertLeave * match ExtraWhiteSpace /\s\+$/
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Highlight text longer than X chars
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" :au BufWinEnter * let w:m1=matchadd('ErrorMsg', '\%<81v.\%>77v', -1)  Don't
+" like this now but the above highlight chars leading up to 80.
+:au BufWinEnter * let w:m2=matchadd('Search', '\%>110v.\+', -1)
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CUSTOM AUTOCMDS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -57,8 +62,6 @@ augroup vimrcEx
   autocmd! BufRead,BufNewFile *.sass setfiletype sass
 
 augroup END
-
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISC KEY MAPS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -74,11 +77,13 @@ imap <c-c> <esc>
 " resize the vertical split easlier
 nnoremap <silent> <c-p> 20<c-W>>
 nnoremap <silent> <c-o> 20<c-W><
-
-
+" Ack
 nnoremap <leader>a :Ack -a
-
-
+" space bar will center screen on current line
+nmap <space> zz
+" center the search next/search previous:
+nmap n nzz
+nmap N Nzz
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
@@ -93,22 +98,26 @@ function! InsertTabWrapper()
 endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
-
-
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " funkyness below as per tpope post to deal with pathogen load issues
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocp
 call pathogen#infect()
 syntax on
 filetype plugin indent on
 call pathogen#infect()
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " below allows for indenting a file and puts cursor back where you were
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map   <silent> <F5> mmgg=G'm
 imap  <silent> <F5> <Esc> mmgg=G'm
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " preserve highlight in visual mode when indenting
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 :vmap < <gv
 :vmap > >gv
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" MAPS TO JUMP TO SPECIFIC COMMAND-T TARGETS AND FILES
+" COMMAND-T TARGETS AND SETTINGS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
 map <leader>gv :CommandTFlush<cr>\|:CommandT app/views<cr>
@@ -119,3 +128,4 @@ map <leader>gl :CommandTFlush<cr>\|:CommandT lib<cr>
 map <leader>gp :CommandTFlush<cr>\|:CommandT public<cr>
 map <leader>gs :CommandTFlush<cr>\|:CommandT public/stylesheets<cr>
 set wildignore+=vendor/** "global setting but used by CmdT
+set wildignore+=db/migrate/**
