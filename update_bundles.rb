@@ -9,7 +9,8 @@ git_bundles = [
 	"https://github.com/mileszs/ack.vim.git",
 	"https://github.com/tpope/vim-commentary.git",
 	"https://github.com/itspriddle/vim-stripper.git",
-	"https://github.com/vim-scripts/AutoTag",
+	"https://github.com/xolox/vim-misc", #required by easytags below
+	"https://github.com/xolox/vim-easytags",
 	"https://github.com/tpope/vim-endwise",
   "https://github.com/wincent/Command-T.git"
 ]
