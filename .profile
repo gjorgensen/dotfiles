@@ -16,6 +16,7 @@ alias gphm='git push heroku master'
 alias gcam='git commit -a -m'
 alias hdpull='rbenv exec heroku db:pull'
 alias hdpush='rbenv exec heroku db:push'
+alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 
 
 # Project -- VoIP
@@ -37,6 +38,7 @@ alias dccs='cd ~/projects/DCCS'
 alias gdg='git diff --color remotes/origin/master..master'
 alias gdh='git diff --color remotes/heroku/master..master'
 alias gdc='git diff --color'
+alias gl='git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"'
 
 export PATH="/usr/local/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/gregoryjorgensen/.gem/ruby/1.8/gems/rails-2.3.5/lib/rails_generator:$PATH"
 

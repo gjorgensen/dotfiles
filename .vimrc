@@ -30,6 +30,13 @@ set hlsearch            " Continue to highlight searched phrases.
 set incsearch             " Highlight as you type your search.
 set ignorecase smartcase  " make searches case-sensitive only if they contain upper-case characters
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Update ctags when a file saves
+" IF VIM GETS SLOW KILL THIS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+au BufWritePost *.rb,*.js silent! !ctags -R &
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Highlight the trailing whitespace on opening the buffer and leaving the insert mode.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
